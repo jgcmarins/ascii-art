@@ -3,7 +3,7 @@
 CPP=g++
 
 # flags
-F=-Wall -std=c++14
+F=-Wall -std=c++11
 
 # binary
 BIN=./build/ascii-art.app
@@ -27,3 +27,7 @@ run:
 	$(BIN)
 valgrind:
 	valgrind $(BIN)
+run_socrates:
+	$(BIN) in/socrates.bmp
+valgrind_socrates:
+	valgrind $(BIN) in/socrates.bmp
