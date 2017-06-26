@@ -11,7 +11,7 @@ using namespace std;
 typedef struct bmp_body {
   int m;
   int n;
-  unsigned char *body;
+  unsigned char **body;
 } bmp_body;
 
 bmp_body *new_bmp_body(int m, int n);

@@ -17,6 +17,11 @@ int main(int argc, char *argv[]) {
     unsigned char *header = new unsigned char[54];
     bmp_image *bi = new_bmp_image();
     bi->bh = bmp_read_header(image, header);
+    if(bi->bh->b != B && bi->bh->m != M) {
+      delete_bmp_image(bi);
+      printf("Image format must be BMP\n");
+      exit(1);
+    }
     bi->bb = new_bmp_body(bi->bh->width, bi->bh->height);
 
     printf("B: %c | M: %c\nWidth: %d | Height: %d\nBits/pixel: %d\n",
