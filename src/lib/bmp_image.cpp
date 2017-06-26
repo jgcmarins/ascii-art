@@ -7,5 +7,6 @@ bmp_image *new_bmp_image() {
 
 void delete_bmp_image(bmp_image *bi) {
   if(bi->bh != NULL) delete_bmp_header(bi->bh);
+  if(bi->bb != NULL) delete_bmp_body(bi->bb);
   if(bi != NULL) free(bi);
 }
