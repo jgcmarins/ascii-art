@@ -15,7 +15,7 @@ MAIN=./src/main.cpp
 H=./src/headers
 
 # library
-LIB=./src/lib/bmp_reader.cpp ./src/lib/bmp_header.cpp ./src/lib/bmp_image.cpp ./src/lib/bmp_body.cpp
+LIB=./src/lib/bmp_reader.cpp ./src/lib/bmp_header.cpp ./src/lib/bmp_image.cpp ./src/lib/bmp_body.cpp ./src/lib/bmp_process.cpp
 
 all: clean compile
 clean:

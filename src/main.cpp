@@ -1,4 +1,5 @@
 #include "./headers/bmp_reader.h"
+#include "./headers/bmp_process.h"
 
 int main(int argc, char *argv[]) {
 
