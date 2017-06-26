@@ -12,7 +12,18 @@ int main(int argc, char *argv[]) {
       printf("Image format must be BMP\n");
       exit(1);
     }
-    printf("You are good to go!\n");
+    //printf("%s\n", image.data());
+
+    ifstream istrm(image, ios::binary);
+    if(!istrm.is_open()) {
+      printf("Failed to open %s\n", image.data());
+    } else {
+      printf("%s opened\n", image.data());
+      unsigned char *bmp_header = new unsigned char[54];
+      istrm.read((char *)bmp_header, 54);
+      printf("%s\n", bmp_header);
+      delete [] bmp_header;
+    }
   }
 
   return 0;

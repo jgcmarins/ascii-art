@@ -15,7 +15,7 @@ MAIN=./src/main.cpp
 H=./src/headers
 
 # library
-LIB=
+LIB=./src/lib/bmp_reader.cpp
 
 all: clean compile
 clean:
