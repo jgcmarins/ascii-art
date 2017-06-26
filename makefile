@@ -28,6 +28,6 @@ run:
 valgrind:
 	valgrind $(BIN)
 run_socrates:
-	$(BIN) in/socrates.bmp
+	$(BIN) in/socrates.bmp 1 2
 valgrind_socrates:
-	valgrind $(BIN) in/socrates.bmp
+	valgrind $(BIN) in/socrates.bmp 1 2

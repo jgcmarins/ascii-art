@@ -15,3 +15,8 @@ bmp_header *bmp_read_header(string image, unsigned char *header) {
 
   return bh;
 }
+
+bmp_body *bmp_read_body(string image, int width, int height, int m, int n) {
+  bmp_body *bb = new_bmp_body(width, height, m, n);
+  return bb;
+}
