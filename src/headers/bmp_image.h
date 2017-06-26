@@ -7,4 +7,8 @@ typedef struct bmp_image {
   bmp_header *bh;
 } bmp_image;
 
+bmp_image *new_bmp_image();
+
+void delete_bmp_image(bmp_image *bi);
+
 #endif

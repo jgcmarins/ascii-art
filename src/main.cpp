@@ -8,22 +8,23 @@ int main(int argc, char *argv[]) {
   } else {
     string image = argv[1];
     string ext = image.substr(image.size() - 3, image.size() - 1);
+
     if(ext.compare("bmp") != 0) {
       printf("Image format must be BMP\n");
       exit(1);
     }
-    //printf("%s\n", image.data());
 
-    ifstream istrm(image, ios::binary);
-    if(!istrm.is_open()) {
-      printf("Failed to open %s\n", image.data());
-    } else {
-      printf("%s opened\n", image.data());
-      unsigned char *bmp_header = new unsigned char[54];
-      istrm.read((char *)bmp_header, 54);
-      printf("%s\n", bmp_header);
-      delete [] bmp_header;
-    }
+    unsigned char *header = new unsigned char[54];
+    bmp_image *bi = new_bmp_image();
+    bi->bh = bmp_read_header(image, header);
+
+    printf("B: %c | M: %c\nWidth: %d | Height: %d\nBits/pixel: %d\n",
+    bi->bh->b, bi->bh->m, bi->bh->width, bi->bh->height, bi->bh->bits);
+
+    delete_bmp_image(bi);
+
+    delete [] header;
+
   }
 
   return 0;
