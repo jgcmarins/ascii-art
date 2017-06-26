@@ -2,8 +2,8 @@
 
 bmp_body *new_bmp_body(int width, int height, int m, int n) {
   bmp_body *bb = (bmp_body *) malloc(sizeof(bmp_body));
-  bb->body = new unsigned char * [width];
-  for(int i = 0 ; i < width ; i++) bb->body[i] = new unsigned char[height];
+  bb->body = new int * [width];
+  for(int i = 0 ; i < width ; i++) bb->body[i] = new int[height];
   bb->width = width;
   bb->height = height;
   bb->m = m;

@@ -8,12 +8,14 @@
 
 using namespace std;
 
+#define BODY_OFFSET 55
+
 typedef struct bmp_body {
   int width;
   int height;
   int m;
   int n;
-  unsigned char **body;
+  int **body;
 } bmp_body;
 
 bmp_body *new_bmp_body(int width, int height, int m, int n);
