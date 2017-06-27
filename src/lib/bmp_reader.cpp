@@ -23,8 +23,9 @@ bmp_body *bmp_read_body(string image, int width, int height, int m, int n) {
   if(!istrm.is_open()) printf("Failed to open %s\n", image.data());
   else {
     int offset = BODY_OFFSET;
-    istrm.seekg(offset);
+    int k = (bb->width - 1);
     for(int i = 0 ; i < bb->width ; i++) {
+      istrm.seekg(offset + (k * bb->height));
       for(int j = 0 ; j < bb->height ; j++) {
         unsigned char cbuf[4];
         istrm.read((char *)cbuf, 4);
@@ -33,6 +34,7 @@ bmp_body *bmp_read_body(string image, int width, int height, int m, int n) {
         offset += 4;
         istrm.seekg(offset);
       }
+      k--;
     }
   }
 
