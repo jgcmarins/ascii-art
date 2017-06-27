@@ -1,9 +1,15 @@
 #include "../headers/bmp_process.h"
 
 void bmp_process_body(bmp_image *bi) {
-  for(int i = (bi->bb->height - 1) ; i >= 0  ; i--) {
-    for(int j = 0 ; j < bi->bb->width ; j++) {
-      int pixel = bi->bb->body[i][j];
+  for(int i = (bi->bb->height - 1) ; i >= 0  ; i -= bi->bb->n) {
+    for(int j = 0 ; j < bi->bb->width ; j += bi->bb->m) {
+      int color = 0;
+      for(int k = 0 ; k < bi->bb->n ; k++) {
+        for(int l = 0 ; l < bi->bb->m ; l++) {
+          if((i - k) >= 0 && (j + l) < bi->bb->width) color += bi->bb->body[i - k][j + l];
+        }
+      }
+      int pixel = (color/(bi->bb->m * bi->bb->n));
       if(pixel >= 0 && pixel <= 25) printf("#");
       else if(pixel > 25 && pixel <= 50) printf("$");
       else if(pixel > 50 && pixel <= 75) printf("O");

@@ -27,8 +27,8 @@ int main(int argc, char *argv[]) {
 
     bmp_process_body(bi);
 
-    printf("B: %c | M: %c\nWidth: %d | Height: %d\nBits/pixel: %d\n",
-    bi->bh->b, bi->bh->m, bi->bh->width, bi->bh->height, bi->bh->bits);
+    /*printf("B: %c | M: %c\nWidth: %d | Height: %d\nBits/pixel: %d\n",
+    bi->bh->b, bi->bh->m, bi->bh->width, bi->bh->height, bi->bh->bits);*/
 
     delete_bmp_image(bi);
 
