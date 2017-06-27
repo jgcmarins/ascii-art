@@ -16,22 +16,22 @@ bmp_header *bmp_read_header(string image, unsigned char *header) {
   return bh;
 }
 
-bmp_body *bmp_read_body(string image, int width, int height, int m, int n) {
+bmp_body *bmp_read_body(string image, int width, int height, int m, int n, int bitsperpixel) {
   bmp_body *bb = new_bmp_body(width, height, m, n);
 
   ifstream istrm(image, ios::binary);
   if(!istrm.is_open()) printf("Failed to open %s\n", image.data());
   else {
     int offset = BODY_OFFSET;
-    int k = (bb->width - 1);
-    for(int i = 0 ; i < bb->width ; i++) {
-      istrm.seekg(offset + (k * bb->height));
-      for(int j = 0 ; j < bb->height ; j++) {
+    int k = (bb->height - 1);
+    for(int i = 0 ; i < bb->height ; i++) {
+      istrm.seekg(offset + (k * bb->width));
+      for(int j = 0 ; j < bb->width ; j++) {
         unsigned char cbuf[4];
-        istrm.read((char *)cbuf, 4);
+        istrm.read((char *)cbuf, bitsperpixel/8);
         int color = ((short)cbuf[2]+(short)cbuf[1]+(short)cbuf[0])/3;
         bb->body[i][j] = color;
-        offset += 4;
+        offset += bitsperpixel/8;
         istrm.seekg(offset);
       }
       k--;

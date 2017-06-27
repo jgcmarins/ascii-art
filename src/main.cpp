@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
       printf("The file %s is not a .bmp image\n", image.data());
       exit(1);
     }
-    bi->bb = bmp_read_body(image, bi->bh->width, bi->bh->height, atoi(argv[2]), atoi(argv[3]));
+    bi->bb = bmp_read_body(image, bi->bh->width, bi->bh->height, atoi(argv[2]), atoi(argv[3]), bi->bh->bits);
 
     bmp_process_body(bi);
 

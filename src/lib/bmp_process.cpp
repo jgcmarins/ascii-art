@@ -1,8 +1,8 @@
 #include "../headers/bmp_process.h"
 
 void bmp_process_body(bmp_image *bi) {
-  for(int i = 0 ; i < bi->bb->width ; i++) {
-    for(int j = 0 ; j < bi->bb->height ; j++) {
+  for(int i = (bi->bb->height - 1) ; i >= 0  ; i--) {
+    for(int j = 0 ; j < bi->bb->width ; j++) {
       int pixel = bi->bb->body[i][j];
       if(pixel >= 0 && pixel <= 25) printf("#");
       else if(pixel > 25 && pixel <= 50) printf("$");
