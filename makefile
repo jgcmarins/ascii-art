@@ -30,4 +30,8 @@ valgrind:
 run_socrates:
 	$(BIN) in/socrates.bmp 1 2 > out/socrates.txt
 valgrind_socrates:
-	valgrind $(BIN) in/socrates.bmp 1 2 > out/socrates.txt 
+	valgrind $(BIN) in/socrates.bmp 1 2 > out/socrates.txt
+run_lena:
+	$(BIN) in/lena.bmp 4 4 > out/lena.txt
+valgrind_lena:
+	valgrind $(BIN) in/lena.bmp 4 4 > out/lena.txt
