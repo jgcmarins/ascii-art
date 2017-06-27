@@ -35,3 +35,7 @@ run_lena:
 	$(BIN) in/lena.bmp 4 4 > out/lena.txt
 valgrind_lena:
 	valgrind $(BIN) in/lena.bmp 4 4 > out/lena.txt
+run_js:
+	$(BIN) in/js.bmp 4 4 > out/js.txt
+valgrind_js:
+	valgrind $(BIN) in/js.bmp 4 4 > out/js.txt
