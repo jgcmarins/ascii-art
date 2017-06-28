@@ -27,5 +27,5 @@ $ make run /path/to/image.bmp M N > output.txt
 ## notices
 Sorry for my bad C++. It's been a long time :laughing:
 
-## LICENSE
+## License
 [MIT](https://github.com/jgcmarins/ascii-art/blob/master/LICENSE)
