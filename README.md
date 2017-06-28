@@ -8,7 +8,8 @@ Before|After
 ![Woman image](https://raw.githubusercontent.com/jgcmarins/ascii-art/master/in/woman.bmp?token=AE5UiktDsCll7DG9MU_ZJW06REKKAgcMks5ZXGThwA%3D%3D)|![Woman ascii](https://raw.githubusercontent.com/jgcmarins/ascii-art/master/results/woman.png?token=AE5UigzbV1z9-721X9iUSI2GC1p720Xvks5ZXGTUwA%3D%3D)
 ![JS image](https://raw.githubusercontent.com/jgcmarins/ascii-art/master/in/js.bmp?token=AE5Uig5SiQ5S-F1rgamHQkXEgJlvOUCqks5ZXGUJwA%3D%3D)|![JS ascii](https://raw.githubusercontent.com/jgcmarins/ascii-art/master/results/js.png?token=AE5UitzJK6DH5forWakoRiYCyvGluP1nks5ZXGT2wA%3D%3D)
 
-# outputs
+## outputs
+You can also check the outputs [here](https://github.com/jgcmarins/ascii-art/tree/master/out).
 
 ## usage
 First, build the executable
@@ -23,3 +24,8 @@ I would recommend to choose M and N based on image resolution and also to direct
 ```
 $ make run /path/to/image.bmp M N > output.txt
 ```
+## notices
+Sorry for my bad C++. It's been a long time :laughing:
+
+## LICENSE
+[MIT](https://github.com/jgcmarins/ascii-art/blob/master/LICENSE)
