@@ -1,6 +1,6 @@
 #include "../headers/bmp_process.h"
 
-void bmp_process_body(bmp_image *bi) {
+void bmp_to_ascii(bmp_image *bi) {
   for(int i = (bi->bb->height - 1) ; i >= 0  ; i -= bi->bb->n) {
     for(int j = 0 ; j < bi->bb->width ; j += bi->bb->m) {
       int color = 0;

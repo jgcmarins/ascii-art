@@ -3,6 +3,6 @@
 
 #include "bmp_image.h"
 
-void bmp_process_body(bmp_image *bi);
+void bmp_to_ascii(bmp_image *bi);
 
 #endif

@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     }
     bi->bb = bmp_read_body(image, bi->bh->width, bi->bh->height, atoi(argv[2]), atoi(argv[3]), bi->bh->bits);
 
-    bmp_process_body(bi);
+    bmp_to_ascii(bi);
 
     /*printf("B: %c | M: %c\nWidth: %d | Height: %d\nBits/pixel: %d\n",
     bi->bh->b, bi->bh->m, bi->bh->width, bi->bh->height, bi->bh->bits);*/
