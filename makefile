@@ -31,10 +31,10 @@ run_socrates:
 	$(BIN) in/socrates.bmp 1 2 > out/socrates.txt
 valgrind_socrates:
 	valgrind $(BIN) in/socrates.bmp 1 2 > out/socrates.txt
-run_lena:
-	$(BIN) in/lena.bmp 4 4 > out/lena.txt
-valgrind_lena:
-	valgrind $(BIN) in/lena.bmp 4 4 > out/lena.txt
+run_woman:
+	$(BIN) in/woman.bmp 4 4 > out/woman.txt
+valgrind_woman:
+	valgrind $(BIN) in/woman.bmp 4 4 > out/woman.txt
 run_js:
 	$(BIN) in/js.bmp 4 4 > out/js.txt
 valgrind_js:
